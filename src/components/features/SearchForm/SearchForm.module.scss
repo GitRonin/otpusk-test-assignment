@@ -1,0 +1,28 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.form {
+  @include mixins.flex-column;
+  gap: 0;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: vars.$spacing-xl vars.$spacing-lg;
+  background: white;
+  border-radius: vars.$radius-xl;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.inputWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-sm;
+  width: 100%;
+  margin-top: vars.$spacing-lg;
+}

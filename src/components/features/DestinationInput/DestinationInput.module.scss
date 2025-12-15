@@ -1,0 +1,17 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-md;
+  width: 100%;
+}
+
+.itemName {
+  font-weight: vars.$font-weight-normal;
+  color: #1a1a1a;
+  font-size: vars.$font-size-base;
+  line-height: 1.4;
+  @include mixins.truncate;
+}

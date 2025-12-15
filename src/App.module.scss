@@ -1,43 +1,32 @@
+@use "./styles/mixins" as mixins;
+@use "./styles/variables" as vars;
+
 .app {
   min-height: 100vh;
-  background-color: #f5f5f5;
-  padding: 20px;
+  @include mixins.flex-column;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 40px;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: vars.$spacing-md vars.$spacing-lg;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
+  font-size: vars.$font-size-2xl;
+  font-weight: vars.$font-weight-semibold;
+  color: var(--color-text-primary);
   margin: 0;
 }
 
 .main {
-  max-width: 500px;
+  flex: 1;
+  padding: vars.$spacing-lg;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-}
 
-.searchForm {
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 32px;
-}
-
-.inputGroup {
-  margin-bottom: 24px;
-}
-
-.buttonGroup {
-}
-
-.loaderSection {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
+  @include mixins.mobile-only {
+    padding: vars.$spacing-md;
+  }
 }

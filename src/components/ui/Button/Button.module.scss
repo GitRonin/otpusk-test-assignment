@@ -1,78 +1,125 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
 .button {
-  border: none;
-  border-radius: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: inherit;
-  width: 100%;
+  @include mixins.button-base;
 
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  &.loading {
+    position: relative;
+    pointer-events: none;
+    color: transparent !important;
 
-  &:focus {
-    outline: 2px solid #4285f4;
-    outline-offset: 2px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
   }
 }
 
 .primary {
-  background-color: #4285f4;
+  background: #3b82f6;
   color: white;
+  border: none;
+  font-weight: vars.$font-weight-semibold;
+  padding: vars.$spacing-md vars.$spacing-xl;
+  border-radius: vars.$radius-lg;
+  font-size: vars.$font-size-base;
+  min-height: 48px;
 
   &:hover:not(:disabled) {
-    background-color: #3367d6;
+    background: #2563eb;
+  }
+
+  &:active {
+    background: #1d4ed8;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
 .secondary {
+  @include mixins.button-variant(vars.$secondary-color, vars.$text-white);
+}
+
+.outline {
+  @include mixins.button-base;
   background-color: transparent;
-  color: #4285f4;
-  border: 1px solid #4285f4;
+  color: vars.$primary-color;
+  border: 1px solid vars.$primary-color;
 
   &:hover:not(:disabled) {
-    background-color: #f8f9fa;
+    background-color: vars.$primary-color;
+    color: vars.$text-white;
   }
 }
 
-.small {
-  padding: 8px 16px;
-  font-size: 14px;
+.ghost {
+  @include mixins.button-base;
+  background-color: transparent;
+  color: vars.$primary-color;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(vars.$primary-color, 0.1);
+  }
 }
 
-.medium {
-  padding: 16px 24px;
-  font-size: 16px;
+.sm {
+  @include mixins.button-size(
+    vars.$spacing-xs,
+    vars.$spacing-sm,
+    vars.$font-size-sm
+  );
 }
 
-.large {
-  padding: 20px 32px;
-  font-size: 18px;
+.md {
+  @include mixins.button-size(
+    vars.$spacing-sm,
+    vars.$spacing-md,
+    vars.$font-size-base
+  );
 }
 
-.loading {
-  position: relative;
-  color: transparent;
+.lg {
+  @include mixins.button-size(
+    vars.$spacing-sm,
+    vars.$spacing-lg,
+    vars.$font-size-lg
+  );
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border: 2px solid transparent;
-    border-top: 2px solid currentColor;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.fullWidth {
+  width: 100%;
+}
+
+.iconOnly {
+  padding: vars.$spacing-sm;
+
+  &.sm {
+    padding: vars.$spacing-xs;
+  }
+
+  &.lg {
+    padding: vars.$spacing-md;
   }
 }
 
 @keyframes spin {
-  to {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }

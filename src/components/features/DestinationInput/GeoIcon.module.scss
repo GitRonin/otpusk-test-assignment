@@ -1,0 +1,22 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.icon {
+  width: 24px;
+  height: 24px;
+  @include mixins.flex-center;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.flag {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: vars.$radius-sm;
+  flex-shrink: 0;
+}
