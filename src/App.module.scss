@@ -1,0 +1,44 @@
+.app {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.main {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.searchForm {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+
+.inputGroup {
+  margin-bottom: 24px;
+}
+
+.buttonGroup {
+  // Кнопка вже має width: 100%
+}
+
+.loaderSection {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
