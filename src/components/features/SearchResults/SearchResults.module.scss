@@ -1,0 +1,68 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.results {
+  margin-top: vars.$spacing-2xl;
+}
+
+.title {
+  margin-bottom: vars.$spacing-lg;
+  color: var(--color-text-primary);
+  font-size: vars.$font-size-xl;
+  font-weight: vars.$font-weight-semibold;
+}
+
+.grid {
+  @include mixins.grid-responsive(250px, vars.$spacing-lg);
+  max-width: 100%;
+
+  @include mixins.mobile-only {
+    grid-template-columns: 1fr;
+    gap: vars.$spacing-md;
+  }
+
+  @include mixins.tablet-up {
+    gap: vars.$spacing-lg;
+  }
+}
+
+.stateContainer {
+  margin-top: vars.$spacing-2xl;
+  @include mixins.flex-center;
+}
+
+.error,
+.empty {
+  @include mixins.card;
+  text-align: center;
+  padding: vars.$spacing-2xl vars.$spacing-lg;
+  max-width: 400px;
+  border: 1px solid var(--color-border);
+}
+
+.errorIcon,
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: vars.$spacing-md;
+  display: block;
+}
+
+.errorTitle,
+.emptyTitle {
+  margin: 0 0 vars.$spacing-sm 0;
+  font-size: vars.$font-size-lg;
+  font-weight: vars.$font-weight-semibold;
+  color: var(--color-text-primary);
+}
+
+.errorMessage,
+.emptyMessage {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.loading {
+  @include mixins.flex-center;
+  padding: vars.$spacing-2xl;
+}

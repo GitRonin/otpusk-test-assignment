@@ -1,0 +1,63 @@
+@use "../../../styles/variables" as vars;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: vars.$spacing-md;
+}
+
+.modal {
+  background: white;
+  border-radius: vars.$radius-xl;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  padding: vars.$spacing-xl;
+  animation: slideIn 0.2s ease-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: vars.$spacing-md;
+  right: vars.$spacing-md;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+
+  &:hover {
+    color: #1a1a1a;
+  }
+}
+
+.title {
+  margin: 0 0 vars.$spacing-lg 0;
+  font-size: vars.$font-size-xl;
+  font-weight: vars.$font-weight-bold;
+  color: #1a1a1a;
+  padding-right: vars.$spacing-xl;
+}
+
+.content {
+  color: #1a1a1a;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

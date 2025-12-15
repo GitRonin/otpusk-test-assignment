@@ -1,0 +1,75 @@
+@use "../../../../styles/variables" as vars;
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: vars.$spacing-xl;
+}
+
+.error {
+  color: #ef4444;
+  text-align: center;
+  padding: vars.$spacing-lg;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-sm;
+}
+
+.hotelName {
+  margin: 0 0 vars.$spacing-md 0;
+  font-size: vars.$font-size-lg;
+  font-weight: vars.$font-weight-bold;
+  color: #1a1a1a;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: vars.$spacing-xs 0;
+}
+
+.label {
+  color: #6b7280;
+  font-size: vars.$font-size-sm;
+}
+
+.value {
+  color: #1a1a1a;
+  font-weight: vars.$font-weight-medium;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: vars.$spacing-sm 0;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: vars.$spacing-sm 0;
+}
+
+.priceLabel {
+  font-size: vars.$font-size-lg;
+  font-weight: vars.$font-weight-semibold;
+  color: #1a1a1a;
+}
+
+.priceValue {
+  font-size: 24px;
+  font-weight: vars.$font-weight-bold;
+  color: #3b82f6;
+}
+
+.note {
+  margin: vars.$spacing-md 0 0 0;
+  font-size: vars.$font-size-xs;
+  color: #9ca3af;
+  line-height: 1.4;
+}

@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import styles from "./App.module.scss";
-import { SearchForm } from "./components/features";
+import { SearchForm, SearchResults } from "./components/features";
 import { SkipLink } from "./components/ui/SkipLink";
 import { selectIsSearching, useSearchStore } from "./store";
 
@@ -36,6 +36,7 @@ function App() {
           isSearching={isSearching}
           currentSearchCountryId={currentCountryId}
         />
+        <SearchResults />
       </main>
     </div>
   );
