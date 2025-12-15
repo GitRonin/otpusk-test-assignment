@@ -1,0 +1,26 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.skipLink {
+  @include mixins.visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: vars.$spacing-sm;
+    left: vars.$spacing-sm;
+    z-index: 9999;
+    padding: vars.$spacing-sm vars.$spacing-md;
+    background-color: vars.$primary-color;
+    color: vars.$text-white;
+    text-decoration: none;
+    border-radius: vars.$radius-md;
+    font-weight: vars.$font-weight-medium;
+    box-shadow: vars.$shadow-lg;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,39 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as vars;
+
+.root {
+  position: relative;
+  width: 100%;
+}
+
+.menu {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: vars.$radius-lg;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: vars.$spacing-md;
+}
+
+.item {
+  padding: vars.$spacing-md vars.$spacing-lg;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &.highlighted {
+    background-color: #f8fafc;
+  }
+}
+
+.loading,
+.empty {
+  padding: vars.$spacing-lg;
+  text-align: center;
+  color: #6b7280;
+  font-size: vars.$font-size-sm;
+}
