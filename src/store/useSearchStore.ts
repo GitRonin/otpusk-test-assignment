@@ -46,8 +46,8 @@ export const useSearchStore = create<SearchStore>((set, get) => ({
 
       try {
         await cancelSearch(activeToken);
-      } catch (error) {
-        console.error(error);
+      } catch {
+        // Ignore cancel errors
       }
     }
 
